@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Product Explore App</string>
+    <string name="product_price">Product price</string>
+    <string name="product_title">Product title</string>
+    <string name="details">Product details</string>
+    <string name="product_description">Product description</string>
+    <string name="welcome_to_shop_explorer">Welcome to shop explorer</string>
+    <string name="get_started">Get started</string>
 </resources>
