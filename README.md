@@ -4,11 +4,11 @@ A modern Android application that showcases products from the Fake Store API wit
 
 ## Screenshots
 
-![Product List Screen](/screenshots/list_screen.png)
-*Product List Screen - Displays all products in a clean, scrollable list*
+![Screenshot_20241124_033729](https://github.com/user-attachments/assets/759d9bed-9572-4d22-aad4-34d5c48fe9e1)
+![Screenshot_20241124_033815](https://github.com/user-attachments/assets/9ef551af-1794-4775-b08b-5264888b7dea)
+![Screenshot_20241124_033824](https://github.com/user-attachments/assets/0636648c-6892-47fc-8d94-f6f178409f1b)
+![Screenshot_20241124_033833](https://github.com/user-attachments/assets/b8cae6d7-bbda-4340-a242-5ba7ffdea1f5)
 
-![Product Details Screen](/screenshots/details_screen.png)
-*Product Details Screen - Shows comprehensive product information*
 
 ## Features
 
@@ -23,7 +23,7 @@ A modern Android application that showcases products from the Fake Store API wit
 - **Architecture Pattern**: MVVM (Model-View-ViewModel)
 - **Dependency Injection**: Hilt
 - **Database**: Room for local data persistence
-- **Networking**: Retrofit with Moshi for API communication
+- **Networking**: Retrofit for API communication
 - **Asynchronous Operations**: Kotlin Coroutines and Flow
 - **UI Components**: Material Design 3
 - **Testing**: JUnit for unit tests
@@ -32,29 +32,30 @@ A modern Android application that showcases products from the Fake Store API wit
 
 ```
 app/
+├── adapter
+│   ├── ProductAdapter
 ├── data/
 │   ├── local/
 │   │   ├── ProductDao.kt
 │   │   └── ProductDatabase.kt
-│   ├── remote/
-│   │   ├── ProductApi.kt
-│   │   └── ProductService.kt
-│   ├── model/
+├── model/
 │   │   └── Product.kt
+|
+│   ├── remote/
+│   │   ├── ApiService.kt
+│   │   
 │   └── repository/
 │       └── ProductRepository.kt
 ├── di/
 │   └── AppModule.kt
 ├── ui/
-│   ├── list/
-│   │   ├── ProductListFragment.kt
-│   │   ├── ProductListViewModel.kt
-│   │   └── ProductAdapter.kt
-│   └── details/
-│       ├── ProductDetailsFragment.kt
-│       └── ProductDetailsViewModel.kt
+│   ├── viewModel/
+│   |   |──ProductListViewModel
+│   └──  ProductDetailsFragment.kt
+│   └──  ProductsScreenFragment.kt
+│   └──  SplashScreenFragment.kt
 └── utils/
-    └── NetworkUtil.kt
+    └── NetworResult.kt
 ```
 
 ## Setup Instructions
@@ -99,19 +100,15 @@ git clone https://github.com/yourusername/product-explorer.git
    - With more time, would add:
      - Product search functionality
      - Filtering and sorting options
-     - Pull-to-refresh feature
      - Skeleton loading screens
 
 2. **Technical Improvements**
    - Implement pagination for better performance with large datasets
    - Add more comprehensive error handling
-   - Implement retry mechanisms for failed network requests
-   - Add integration tests
-   - Implement WorkManager for background sync
+   - Improve retry mechanisms for failed network requests
 
 3. **Features to Add**
    - User favorites functionality
-   - Product categories
    - Share product feature
    - Dark theme support
 
